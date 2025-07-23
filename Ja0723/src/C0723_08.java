@@ -19,13 +19,13 @@ public class C0723_08 {
 //		System.out.println("숫자를 입력하세요.>> ");
 //		n[4] = scan.nextInt();
 		
-		for(int i=0;i<5;i++) {
-			System.out.printf("%d번째 숫자를 입력하세요.>> \n",i+1);
-			n[i] = scan.nextInt();
-		}
-		for(int i=0;i<5;i++) {
-			System.out.print(n[i]+" ");
-		}
+//		for(int i=0;i<5;i++) {
+//			System.out.printf("%d번째 숫자를 입력하세요.>> \n",i+1);
+//			n[i] = scan.nextInt();
+//		}
+//		for(int i=0;i<5;i++) {
+//			System.out.print(n[i]+" ");
+//		}
 		
 		
 		
