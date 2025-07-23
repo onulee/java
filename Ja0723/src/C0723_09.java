@@ -10,18 +10,30 @@ public class C0723_09 {
 		// 정답 : 50
 		Scanner scan = new Scanner(System.in);
 		int rnum = (int)(Math.random()*100)+1;
-		int i = 0;
-		int[] input = new int[5];
+		int[] input = new int[20];
+		int count=0;
 		
-		while(i<5) {
+		for(int i=0;i<input.length;i++) {
 			System.out.println("숫자를 입력하세요.");
 			input[i] = scan.nextInt();
-			
-			
-			
-			i++;
-		}
+			count++;
+			//if
+			if(rnum==input[i]) break;
+			else if(rnum>input[i]) {
+				System.out.println("오답 - 입력한 값이 작습니다.");
+			}else {
+				System.out.println("오답 - 입력한 값이 큽니다.");
+			}
+		}//for
 		
+		
+		System.out.println();
+		System.out.print("입력한 값 : ");
+		for(int i=0;i<count;i++) {
+			System.out.print(input[i]+" ");
+		}
+		System.out.println();
+		System.out.println("정답 : "+rnum);
 		
 		
 		
