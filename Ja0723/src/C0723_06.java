@@ -11,7 +11,10 @@ public class C0723_06 {
 			System.out.printf("%03d\n",i);
 		}
 		
-		
+		int a = 88;
+		System.out.println("0"+a); //099
+		String str = String.format("%03d", a);
+		System.out.println(str);
 		
 		
 //		for(int i=5;i>=1;i--) {
