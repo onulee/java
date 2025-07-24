@@ -12,6 +12,8 @@ public class C0724_09 {
 		double[] avg = new double[3];
 		int count = 0; //입력된 학생수
 		String[] title = {"번호","이름","국어","영어","수학","합계","평균"};
+		int choice = 0; //선택번호
+		int input = 0; //수정점수
 		
 		loop:while(true) {
 			System.out.println("[ 학생성적프로그램 ]");
@@ -22,7 +24,7 @@ public class C0724_09 {
 			System.out.println("0. 프로그램종료");
 			System.out.println("----------------");
 			System.out.println("원하는 번호를 입력하세요.(0.종료)>> ");
-			int choice = scan.nextInt();
+			choice = scan.nextInt();
 			
 			switch(choice) {
 			case 1:
@@ -72,6 +74,53 @@ public class C0724_09 {
 				break;
 			case 3: // 학생성적수정	
 				System.out.println("[ 학생성적수정 ]");
+				System.out.println("찾고자 하는 학생이름을 입력하세요.>> ");
+				String search = scan.next();
+				int temp = 0;
+				for(int i=0;i<count;i++) {
+					if(search.equals(name[i])) {
+						System.out.printf("%s 학생을 찾았습니다. \n",name[i]);
+						
+						System.out.println("[ 점수수정 ]");
+						System.out.println("--------------------");
+						System.out.println("1. 국어");
+						System.out.println("2. 영어");
+						System.out.println("3. 수학");
+						System.out.println("0. 취소-이전화면 이동");
+						System.out.println("--------------------");
+						System.out.println("원하는 번호를 입력하세요.>> ");
+						choice = scan.nextInt();
+						
+						switch(choice) {
+						case 1:
+							// 현재국어점수 : 100
+							System.out.printf("현재국어점수 : %d \n",score[i][0]);
+							System.out.println("변경점수를 입력하세요.>>");
+							input = scan.nextInt();
+							score[i][0] = input;
+							System.out.printf("%d 으로 점수가 변경되었습니다.\n",score[i][0]);
+							System.out.println();
+							// 90
+							break;
+						case 2:
+							System.out.printf("현재영어점수 : %d \n",score[i][1]);
+							
+							break;
+						case 3:
+							System.out.printf("현재수학점수 : %d \n",score[i][2]);
+							
+							break;
+						}
+						
+						
+						temp = 1; //학생이 있을시
+					}
+				}//for
+				
+				if(temp==0) {
+					System.out.printf("%s 찾고자 하는 학생이 없습니다.\n",search);
+					System.out.println();
+				}
 				
 				break;
 			case 0:
