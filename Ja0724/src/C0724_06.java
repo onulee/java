@@ -6,6 +6,8 @@ public class C0724_06 {
 		Scanner scan = new Scanner(System.in);
 		String[] name = new String[3];
 		int[][] score = new int[3][3];
+		int[] total = new int[3];
+		double[] avg = new double[3];
 		String[] title = {"국어","영어","수학"};
 		
 		for(int i=0;i<score.length;i++) {
@@ -14,7 +16,26 @@ public class C0724_06 {
 			for(int j=0;j<score[i].length;j++) {
 				System.out.printf("%d번째 %s점수를 입력하세요.>> \n",i+1,title[j]);
 				score[i][j] = scan.nextInt();
+				//total[i] += score[i][j];
 			}
+			total[i] = score[i][0]+score[i][1]+score[i][2];
+			avg[i] = total[i]/3.0;
+		}
+		
+		System.out.printf("이름\t국어\t영어\t수학\n");
+		System.out.println("----------------------------------------");
+		
+		for(int i=0;i<score.length;i++) {
+			// name
+			System.out.printf("%s\t",name[i]);
+			for(int j=0;j<score[i].length;j++) {
+				// score
+				System.out.printf("%d\t",score[i][j]);
+			}
+			System.out.printf("%d\t",total[i]);
+			System.out.printf("%.2f\t",avg[i]);
+			
+			System.out.println();
 		}
 		
 		// 출력
