@@ -92,27 +92,23 @@ public class C0724_09 {
 						choice = scan.nextInt();
 						
 						switch(choice) {
-						case 1:
+						case 1: case 2: case 3:
 							// 현재국어점수 : 100
-							System.out.printf("현재국어점수 : %d \n",score[i][0]);
+							System.out.printf("현재%s점수 : %d \n",title[choice+1] ,score[i][choice-1]);
 							System.out.println("변경점수를 입력하세요.>>");
 							input = scan.nextInt();
-							score[i][0] = input;
-							System.out.printf("%d 으로 점수가 변경되었습니다.\n",score[i][0]);
+							score[i][choice-1] = input;
+							total[i] = score[i][0]+score[i][1]+score[i][2];
+							avg[i] = total[i]/3.0;
+							System.out.printf("%d 점으로 점수가 변경되었습니다.\n",score[i][choice-1]);
 							System.out.println();
-							// 90
 							break;
-						case 2:
-							System.out.printf("현재영어점수 : %d \n",score[i][1]);
-							
-							break;
-						case 3:
-							System.out.printf("현재수학점수 : %d \n",score[i][2]);
-							
+						
+						case 0:
+							System.out.println("점수변경을 취소했습니다.");
+							System.out.println();
 							break;
 						}
-						
-						
 						temp = 1; //학생이 있을시
 					}
 				}//for
