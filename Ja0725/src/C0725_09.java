@@ -40,7 +40,7 @@ public class C0725_09 {
 		while(true) {
 			// 랜덤번호출력
 			Scanner scan = new Scanner(System.in);
-			System.out.println("          [ 랜덤번호출력 ]");
+			System.out.println("          [ 로또번호 입력 ]");
 			System.out.println("----------------------------------");
 			for(int i=0;i<arr2.length;i++) {
 				for(int j=0;j<arr2[i].length;j++) {
@@ -52,6 +52,14 @@ public class C0725_09 {
 			System.out.println("원하는 번호를 입력하세요.>> ");
 			String choice = scan.next();
 			// 번호입력받아 해당번호위치에 X를 표시하시오.
+			loop:for(int i=0;i<arr2.length;i++) {
+				for(int j=0;j<arr2[i].length;j++) {
+					if(arr2[i][j].equals(choice)) {
+						arr2[i][j]="X";
+						break loop;
+					}
+				}
+			}
 			
 			
 		}//while
