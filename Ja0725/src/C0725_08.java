@@ -6,9 +6,11 @@ public class C0725_08 {
 	public static void main(String[] args) {
 		// 로또번호 맞추기 프로그램
 		Scanner scan = new Scanner(System.in);
-		int[] num = new int[45];
-		int[] lotto = new int[6];
-		int[] myNo = new int[6];
+		int[] num = new int[45]; //45개번호
+		int[] lotto = new int[6];//로또번호
+		int[] myNo = new int[6]; //입력번호 
+		int[] okNo = new int[6]; //정답번호
+		int count = 0;           //정답개수
 		//번호넣기
 		for(int i=0;i<num.length;i++) {
 			num[i] = i+1;
@@ -43,10 +45,27 @@ public class C0725_08 {
 //		}
 //		System.out.println();
 		
+		//입력번호,로또번호 비교
+		for(int i=0;i<6;i++) {
+			for(int j=0;j<6;j++) {
+				if(myNo[i] == lotto[j]) {
+					okNo[count] = myNo[i];
+					count++;
+					break;
+				}
+				
+			}
+		}
+		
+		
 		System.out.println("직접입력 : "+Arrays.toString(myNo));
 		System.out.println("로또입력 : "+Arrays.toString(lotto));
-		System.out.println("정답번호 : "+Arrays.toString(lotto));
-		System.out.println("정답개수 : "+Arrays.toString(lotto));
+		System.out.print("정답번호 : ");
+		for(int i=0;i<count;i++) {
+			System.out.print(okNo[i]+",");
+		}
+		System.out.println();
+		System.out.println("정답개수 : "+count);
 	}
 
 }
