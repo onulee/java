@@ -12,7 +12,51 @@ public class C0725_07 {
 		// 21 1 5 9 30
 		// 7  6 33 44 45
 		
+		int[] arr = new int[25];
 		
+		//배열 번호입력
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = i+1;
+		}
+		
+		// 순차번호출력
+		System.out.print("순차번호 : ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		//랜덤섞기
+		int temp = 0; //임시저장번호
+		int rnum = 0; //랜덤번호
+		for(int i=0;i<300;i++) {
+			rnum = (int)(Math.random()*25); // 0-24
+			temp = arr[0];
+			arr[0] = arr[rnum];
+			arr[rnum] = temp;
+		}
+		
+		// 랜덤번호출력
+		System.out.print("랜덤번호 : ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		// 5,5 2차원배열
+		int[][] score = new int[5][5];
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				score[i][j] = arr[(5*i)+j];
+			}
+		}
+		
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				System.out.print(score[i][j]+"\t");		
+			}
+			System.out.println();
+		}
 		
 		
 		// 1차원배열
