@@ -25,8 +25,8 @@ public class C0728_05 {
 			s[i].eng = scan.nextInt();
 			System.out.println("수학점수를 입력하세요. ");
 			s[i].math = scan.nextInt();
-			s[i].total = s[i].kor+s[i].eng+s[i].math;
-			s[i].avg = s[i].total/3.0;
+			s[i].stuTotal();
+			s[i].stuAvg();
 			
 		}
 		
