@@ -1,6 +1,20 @@
 
 public class Cal {
 
+	void powProcess(double input,int n,
+			double[] number) {
+		//반올림
+		double result = Math.round(input * Math.pow(10, 4))/Math.pow(10, 4);
+		//올림
+		
+		//버림
+		
+		
+		
+		
+	}
+	
+	
 	void add(int a,int b) {
 		System.out.println(a+b);
 	}

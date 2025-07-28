@@ -21,15 +21,16 @@ public class C0728_11 {
 			p.numProcess();
 			break;
 		case 2:
-			int[] myNo = new int[6];
+			int[] num = new int[45];
 			int[] lotto = new int[6];
+			int[] myNo = new int[6];
 			int[] okNo = new int[6];
 			int count = 0; //맞춘 개수 - 기본변수
 			
-			//Process.java에 메소드를 구현해서 입력번호,로또번호,맞춘번호를 출력하시오.
-			//매개변수 전달 - myNo,lotto,okNo,count
+			//메소드 호출부분
+			count = p.lottoProcess(num,lotto,myNo,okNo,count);
 			
-			
+			//출력
 			System.out.println("입력번호 : "+Arrays.toString(myNo));
 			System.out.println("로또번호 : "+Arrays.toString(lotto));
 			System.out.print("맞춘번호 : ");
