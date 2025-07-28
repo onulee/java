@@ -6,5 +6,7 @@ public class StuScore {
 	int eng;
 	int math;
 	int total;
+	double avg;
+	int rank;
 
 }
