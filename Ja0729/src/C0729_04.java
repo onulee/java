@@ -1,5 +1,5 @@
 
-public class C0929_04 {
+public class C0729_04 {
 
 	public static void main(String[] args) {
 		// 생성자
