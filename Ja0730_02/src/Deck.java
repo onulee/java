@@ -21,13 +21,36 @@ public class Deck {
 	}
 	
 	// 카드섞기 메소드
+	public void shuffle() {
+		Card temp = null;
+		int rnum = 0;
+		for(int i=0;i<300;i++) {
+			rnum = (int)(Math.random()*52);
+			temp = c[0];
+			c[0] = c[rnum];
+			c[rnum] = temp;
+		}
+	}
 	
 	// 카드 5장 출력메소드
+	public Card[] pick_5() {
+		Card[] c_5 = new Card[5];
+		for(int i=0;i<c_5.length;i++) {
+			c_5[i] = c[i];
+		}
+		return c_5;
+	}
 	
 	// 카드 1장 뽑기메소드
+	public Card pick(int index) {
+		return c[index];
+	}
 	
 	// 랜덤 카드 1장 뽑기메소드
-	
+	public Card pick() {
+		int index = (int)(Math.random()*52);
+		return c[index];
+	}
 	
 	
 }
