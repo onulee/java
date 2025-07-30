@@ -11,12 +11,17 @@ public class Deck {
 		for(int i=0;i<c.length;i++) {
 			c[i] = new Card(i%13+1,shape[i/13]);
 		}
-		
 	}
 	//전체출력
 	public void card_print() {
 		for(int i=0;i<c.length;i++) {
-			System.out.println(c[i]);
+			System.out.println(
+//					c[i].getN_num() // "","A","2","3","4","5","6","7","8","9","10","J","Q","K"	 
+//					c[1].getN_num()[1]; A
+//					c[1].getNumber(); 1
+//					c[1].getN_num()[c[1].getNumber()]; A
+					c[i].getN_num()[c[i].getNumber()]+","+
+			c[i].getKind());
 		}
 	}
 	

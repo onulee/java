@@ -12,8 +12,29 @@ public class Card {
 		this.kind = kind;
 	}
 	
-	@Override
-	public String toString() {
-		return String.format("%s,%s", kind,n_num[number]);
+	public int getNumber() {
+		return number;
 	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	public String[] getN_num() {
+		return n_num;
+	}
+	public void setN_num(String[] n_num) {
+		this.n_num = n_num;
+	}
+	
+	
+	
+//	@Override
+//	public String toString() {
+//		return String.format("%s,%s", kind,n_num[number]);
+//	}
 }

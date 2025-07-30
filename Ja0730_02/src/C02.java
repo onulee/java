@@ -18,20 +18,25 @@ public class C02 {
 		System.out.println("----");
 		System.out.println("[5장출력]");
 		for(int i=0;i<c.length;i++) {
-			System.out.println(c[i]);
+			System.out.println(c[i].getN_num()[c[i].getNumber()]+","+
+					c[i].getKind());
 		}
 		
 		// 31번째 카드를 출력하시오.
 		Card c1 = d.pick(30);
 		System.out.println("----");
 		System.out.println("[31번째 출력]");
-		System.out.println(c1);
+//		                   c1.getN_num()[30]
+		System.out.println(c1.getN_num()[c1.getNumber()]+","+
+				c1.getKind());
+		
 		
 		// 랜덤으로 카드 한장을 출력하시오.
 		Card c2 = d.pick();
 		System.out.println("----");
 		System.out.println("[랜덤 출력]");
-		System.out.println(c2);
+		System.out.println(c2.getN_num()[c2.getNumber()]+","+
+				c2.getKind());
 		
 		
 
