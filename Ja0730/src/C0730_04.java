@@ -11,6 +11,7 @@ public class C0730_04 {
 		
 		Scanner scan = new Scanner(System.in);
 		Date today = new Date();
+		java.sql.Date day = new java.sql.Date(0);
 		
 
 	}
