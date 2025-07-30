@@ -8,7 +8,16 @@ public class Deck {
 	};
 	Deck() {
 		// 모양,번호부여
+		for(int i=0;i<c.length;i++) {
+			c[i] = new Card(i%13+1,shape[i/13]);
+		}
 		
+	}
+	//전체출력
+	public void card_print() {
+		for(int i=0;i<c.length;i++) {
+			System.out.println(c[i]);
+		}
 	}
 	
 	// 카드섞기 메소드
