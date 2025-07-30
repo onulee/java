@@ -12,6 +12,9 @@ public class Point {
 	}
 	
 	
+	
+	
+	
 	void add() {
 		System.out.println(x+y);
 	}
