@@ -17,6 +17,7 @@ public class C0731_01 {
 			System.out.println("2. AUDIO - 500000");
 			System.out.println("3. COMPUTER - 1500000");
 			System.out.println("4. 구매내역");
+			System.out.println("5. 현재보유금액");
 			System.out.println("------------------------");
 			System.out.println("원하는 번호를 입력하세요.>> ");
 			
@@ -39,11 +40,17 @@ public class C0731_01 {
 				break;
 			case 4:
 				System.out.println("[ 구매내역 ]");
-				for(int i=0;i<b1.i;i++) {
+				for(int i=0;i<b1.list.size();i++) {
 					System.out.printf("%s : %d \n",
-							b1.cart[i].name,
-							b1.cart[i].price);
+							( (Product)b1.list.get(i) ).name,
+							( (Product)b1.list.get(i) ).price);
 			    }//for
+				System.out.println();
+			case 5:
+				System.out.println("[ 현재보유금액 ]");
+				System.out.printf("금액 : %,d \n",b1.money);
+				System.out.println();
+				break;
 		
 			}//switch
 		}//while
