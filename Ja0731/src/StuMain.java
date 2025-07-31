@@ -7,8 +7,12 @@ public class StuMain {
 		Scanner scan = new Scanner(System.in);
 		ArrayList list = new ArrayList();
 		String name = null;
-		int count=0,no,kor,eng,math,total = 0;
+		int no,kor,eng,math,total = 0;
 		double avg = 0;
+		String[] title = {
+			"번호","이름","국어","영어","수학","합계","평균","등수"	
+		};
+		Stuscore s = null;
 //		Stuscore[] s = new Stuscore[10];
 		
 		while(true) {
@@ -36,15 +40,28 @@ public class StuMain {
 				math = scan.nextInt();
 				// 컬렉션 저장
 				list.add(new Stuscore(name,kor,eng,math)); 
-				System.out.printf("%s 학생성적이 저장되었습니다.",name);
-				System.out.println("[ 저장정보 ]");
-				Stuscore s =(Stuscore)list.get(count);
-				System.out.printf("%d,%s,%d \n",
-						s.getNo(),s.getName(),s.getKor());
-				count++;
+				System.out.printf("%s 학생성적이 저장되었습니다. \n",name);
 				break;
-			}
-			
+			case 2:
+				System.out.println();
+				System.out.println("                     [ 학생성적 출력 ] ");
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",
+						title[0],title[1],title[2],title[3],title[4],
+						title[5],title[6],title[7]
+						);
+				System.out.println("------------------------------------------------------------");
+				for(int i=0;i<list.size();i++) {
+					s = (Stuscore)list.get(i); //Object->Stuscore
+					System.out.printf("%d\t%s\t%d\t%d\t%d\t%d\t%.2f\t%d\n",
+							s.getNo(),s.getName(),s.getKor(),s.getEng(),
+							s.getMath(),s.getTotal(),s.getAvg(),s.getRank()
+							);
+				}
+				System.out.println();
+				break;
+				
+				
+			}//switch
 		}//while
 		
 
