@@ -1,25 +1,19 @@
 
-public class Student {
-	private int stuNo;
+public class Stuscore {
+	public static int count;
+	private int no;      //같은클래스
 	private String name;
 	private int kor;
 	private int eng;
 	private int math;
 	private int total;
 	private double avg;
+	private int rank;
 	
-	Student(){}
-	Student(int stuNo,String name){
-		this.stuNo = stuNo;
-		this.name = name;
-	}
-	//생성자를 통해 클래스 복사
-	Student(Student s){
-		this.stuNo = s.stuNo;
-		this.name = s.name;
-	}
-	Student(int stuNo,String name,int kor,int eng,int math){
-		this.stuNo = stuNo;
+	{ no = ++count;	} //초기화블럭 - 객체생성시 우선실행
+	
+	Stuscore(){}
+	Stuscore(String name,int kor,int eng,int math){
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
@@ -27,11 +21,12 @@ public class Student {
 		this.total = kor+eng+math;
 		this.avg = this.total/3.0;
 	}
-	public int getStuNo() {
-		return stuNo;
+	
+	public int getNo() {
+		return no;
 	}
-	public void setStuNo(int stuNo) {
-		this.stuNo = stuNo;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getName() {
 		return name;
@@ -69,20 +64,11 @@ public class Student {
 	public void setAvg(double avg) {
 		this.avg = avg;
 	}
-	
-//	@Override
-//	public String toString() {
-//		return ""+stuNo+","+name;
-//	}
-	
-	
-	@Override
-	public boolean equals(Object obj) {
-//		boolean temp = false;
-//		if(this.stuNo == ((Student)obj).stuNo) {
-//			temp = true;
-//		}
-		return this.stuNo == ((Student)obj).stuNo;
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 
 }
