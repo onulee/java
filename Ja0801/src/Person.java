@@ -23,7 +23,8 @@ public class Person {
 	
 	@Override // 상속에서 메소드를 재정의
 	public String toString() {
-		return ""+id;
+		getClass().getName();
+		return ""+id+","+getClass().getName();
 	}
 
 }
