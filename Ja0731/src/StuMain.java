@@ -5,8 +5,8 @@ public class StuMain {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		StuDeck stuDeck = new StuDeck();
 		ArrayList list = new ArrayList();
+		StuDeck stuDeck = new StuDeck();
 //		Stuscore[] s = new Stuscore[10];
 		
 		while(true) {
