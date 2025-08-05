@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,9 +38,8 @@ public class StuMain {
 				
 				break;
 				
-			case 7: //파일저장
-				
-				
+			case 7: //파일저장 - true:이어쓰기, false:덮어쓰기
+				stuDeck.stu_fileWrite(list);
 				break;
 			case 0:
 				System.out.println("[ 프로그램 종료 ]");

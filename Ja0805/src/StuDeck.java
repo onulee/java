@@ -1,6 +1,9 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,13 +44,13 @@ public class StuDeck {
 	// 상단메뉴 출력메소드
 	int stu_menuPrint() {
 		System.out.println("[ 학생성적 프로그램 ]");
-		System.out.println("1. 성적입력");
+		System.out.println("1. 성적입력"); //완료
 		System.out.println("2. 성적출력"); //완료
 		System.out.println("3. 성적수정");
 		System.out.println("4. 성적삭제");
 		System.out.println("5. 등수처리");
 		System.out.println("6. 이름정렬");
-		System.out.println("7. 파일저장");
+		System.out.println("7. 파일저장"); //완료
 		System.out.println("0. 프로그램 종료"); //완료
 		System.out.println("-------------------");
 		System.out.println("원하는 번호를 입력하세요.>> ");
@@ -91,6 +94,23 @@ public class StuDeck {
 		}
 		System.out.println();
 	}//stu_output
+	
+	// 학생성적 파일저장 메소드
+	public void stu_fileWrite(ArrayList<Student> list) throws Exception {
+		FileWriter fw = new FileWriter("c:/aaa/student.txt");
+		BufferedWriter bw = new BufferedWriter(fw);
+		for(int i=0;i<list.size();i++) {
+			Student s = list.get(i);
+			String st = String.format("%d,%s,%d,%d,%d,%d,%f,%d\r\n", 
+			s.getNo(),s.getName(),s.getKor(),s.getEng(),s.getMath(),
+			s.getTotal(),s.getAvg(),s.getRank());
+			bw.write(st);
+		}
+		bw.close();
+		fw.close();
+		System.out.println("파일저장 완료!");
+		
+	}//stu_fileWrite
 	
 
 }
