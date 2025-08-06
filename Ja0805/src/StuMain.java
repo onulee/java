@@ -40,7 +40,6 @@ public class StuMain {
 				break;
 			case 4: //학생성적삭제
 				stuDeck.stu_delete(list);
-				
 				break;
 				
 			case 7: //파일저장 - true:이어쓰기, false:덮어쓰기

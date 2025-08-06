@@ -56,6 +56,7 @@ public class StuDeck {
 		System.out.println("원하는 번호를 입력하세요.>> ");
 		int choice = scan.nextInt();
 		return choice;
+		
 	}
 	
 	// 1.학생성적 입력메소드
