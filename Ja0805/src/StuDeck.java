@@ -210,6 +210,22 @@ public class StuDeck {
 		System.out.println();
 	}//stu_delete
 	
+	//5.등수처리
+	public void stu_rank(ArrayList<Student> list) {
+		// TODO Auto-generated method stub
+		System.out.println("[ 등수처리 ]");
+		for(int i=0;i<list.size();i++) {
+			int count = 1;
+			for(int j=0;j<list.size();j++) 
+				if(list.get(i).getTotal()<list.get(j).getTotal()) 
+					count++;
+			list.get(i).setRank(count);
+		}//for
+		System.out.println("등수처리가 완료되었습니다!");
+		System.out.println();
+	}//stu_rank
+	
+	
 	// 6.이름정렬
 	public void sort_name(ArrayList<Student> list) {
 		System.out.println("[ 이름정렬 ]");
@@ -287,7 +303,7 @@ public class StuDeck {
 		
 	}//sort_total
 	
-	// 번호정렬
+	// 8.번호정렬
 	public void sort_no(ArrayList<Student> list) {
 		System.out.println("[ 번호정렬 ]");
 		System.out.println(" 1. 번호순차정렬");
@@ -342,6 +358,8 @@ public class StuDeck {
 		System.out.println("파일저장 완료!");
 		
 	}//stu_fileWrite
+
+	
 
 	
 

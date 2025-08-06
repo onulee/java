@@ -42,8 +42,8 @@ public class StuMain {
 			case 4: //학생성적삭제
 				stuDeck.stu_delete(list);
 				break;
-			case 5:
-				
+			case 5: //등수처리
+				stuDeck.stu_rank(list);
 				break;
 			case 6: //이름정렬
 				stuDeck.sort_name(list);
@@ -62,10 +62,6 @@ public class StuMain {
 				System.out.println();
 				break loop;
 			}//switch
-			
-		}
-		
-
-	}
-
-}
+		}//while
+	}//main
+}//class
