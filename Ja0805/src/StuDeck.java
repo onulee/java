@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class StuDeck {
@@ -50,7 +51,9 @@ public class StuDeck {
 		System.out.println("4. 성적삭제"); //완료
 		System.out.println("5. 등수처리");
 		System.out.println("6. 이름정렬");
-		System.out.println("7. 파일저장"); //완료
+		System.out.println("7. 합계정렬");
+		System.out.println("8. 번호정렬");
+		System.out.println("9. 파일저장"); //완료
 		System.out.println("0. 프로그램 종료"); //완료
 		System.out.println("-------------------");
 		System.out.println("원하는 번호를 입력하세요.>> ");
@@ -207,8 +210,123 @@ public class StuDeck {
 		System.out.println();
 	}//stu_delete
 	
+	// 6.이름정렬
+	public void sort_name(ArrayList<Student> list) {
+		System.out.println("[ 이름정렬 ]");
+		System.out.println(" 1. 이름순차정렬");
+		System.out.println(" 2. 이름역순정렬");
+		System.out.println(" 0. 정렬취소");
+		System.out.println("----------------");
+		System.out.println("원하는 번호를 입력하세요.>> ");
+		choice = scan.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("[ 이름순차정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o1이 더크면 순서변경
+					return o1.getName().compareTo(o2.getName());
+				}
+			});
+			break;
+		case 2:
+			System.out.println("[ 이름역순정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o2이 더크면 순서변경
+					return o2.getName().compareTo(o1.getName());
+				}
+			});
+			break;
+		case 3:
+			System.out.println("[ 이름정렬 취소 ]");
+			System.out.println("정렬을 취소합니다!");
+			System.out.println();
+			break;
+		}
+	}//sort_name
 	
-	// 7.학생성적 파일저장 메소드
+	// 7.합계정렬
+	public void sort_total(ArrayList<Student> list) {
+		System.out.println("[ 합계정렬 ]");
+		System.out.println(" 1. 합계순차정렬");
+		System.out.println(" 2. 합계역순정렬");
+		System.out.println(" 0. 정렬취소");
+		System.out.println("----------------");
+		System.out.println("원하는 번호를 입력하세요.>> ");
+		choice = scan.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("[ 합계순차정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o1이 더크면 순서변경
+					return o1.getTotal() - o2.getTotal();
+				}
+			});
+			break;
+		case 2:
+			System.out.println("[ 합계역순정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o2이 더크면 순서변경
+					return o2.getTotal() - o1.getTotal();
+				}
+			});
+			break;
+		case 3:
+			System.out.println("[ 이름정렬 취소 ]");
+			System.out.println("정렬을 취소합니다!");
+			System.out.println();
+			break;
+		}
+		
+	}//sort_total
+	
+	// 번호정렬
+	public void sort_no(ArrayList<Student> list) {
+		System.out.println("[ 번호정렬 ]");
+		System.out.println(" 1. 번호순차정렬");
+		System.out.println(" 2. 번호역순정렬");
+		System.out.println(" 0. 정렬취소");
+		System.out.println("----------------");
+		System.out.println("원하는 번호를 입력하세요.>> ");
+		choice = scan.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("[ 번호순차정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o1이 더크면 순서변경
+					return o1.getNo() - o2.getNo();
+				}
+			});
+			break;
+		case 2:
+			System.out.println("[ 번호역순정렬 ]");
+			list.sort(new Comparator<Student>() {
+				@Override
+				public int compare(Student o1, Student o2) {
+					// o2이 더크면 순서변경
+					return o2.getNo() - o1.getNo();
+				}
+			});
+			break;
+		case 3:
+			System.out.println("[ 이름정렬 취소 ]");
+			System.out.println("정렬을 취소합니다!");
+			System.out.println();
+			break;
+		}
+		
+	}//sort_no
+	
+	// 9.학생성적 파일저장 메소드
 	public void stu_fileWrite(ArrayList<Student> list) throws Exception {
 		FileWriter fw = new FileWriter("c:/aaa/student.txt");
 		BufferedWriter bw = new BufferedWriter(fw);
@@ -224,6 +342,10 @@ public class StuDeck {
 		System.out.println("파일저장 완료!");
 		
 	}//stu_fileWrite
+
+	
+
+	
 	
 
 }
